@@ -1,15 +1,89 @@
+# Online Course Application (Django)
 
-**General Notes**
+This is a Django-based Online Course platform where users can register, enroll in courses, take exams, and view results.
 
-An `onlinecourse` app has already been provided in this repo upon which you will be adding a new assesement feature.
+---
 
-- If you want to develop the final project on Theia hosted by [IBM Developer Skills Network](https://labs.cognitiveclass.ai/), you will need to create the same project structure on Theia workspace and save it everytime you close the browser
-- Or you could develop the final project locally by setting up your own Python runtime and IDE
-- Hints for the final project are left on source code files
-- You may choose any cloud platform for deployment (default is IBM Cloud Foundry)
-- Depends on your deployment, you may choose any SQL database Django supported such as SQLite3, PostgreSQL, and MySQL (default is SQLite3)
+## Features
 
-**ER Diagram**
-For your reference, we have prepared the ER diagram design for the new assesement feature.
+- User Registration & Login
+- Course Listing
+- Course Enrollment
+- Lessons Management
+- Exam System (Questions & Choices)
+- Automatic Result Evaluation
+- Admin Panel for Management
 
-![Onlinecourse ER Diagram](https://github.com/ibm-developer-skills-network/final-cloud-app-with-database/blob/master/static/media/course_images/onlinecourse_app_er.png)
+---
+
+## Tech Stack
+
+- Python 3
+- Django
+- SQLite
+- HTML + Bootstrap
+
+---
+
+## Setup Instructions
+
+### 1. Clone Repository
+git clone https://github.com/<your-username>/tfjzl-final-cloud-app-with-database.git
+cd tfjzl-final-cloud-app-with-database
+
+### 2. Create Virtual Environment
+pip install virtualenv
+virtualenv djangoenv
+source djangoenv/bin/activate
+
+### 3. Install Requirements
+pip install -r requirements.txt
+
+### 4. Run Migrations
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+### 5. Create Superuser
+python3 manage.py createsuperuser
+
+### 6. Run Server
+python3 manage.py runserver
+
+---
+
+## Access URLs
+
+Home:
+http://127.0.0.1:8000/onlinecourse/
+
+Admin:
+http://127.0.0.1:8000/admin
+
+---
+
+## Exam Flow
+
+1. Login / Register
+2. Enroll in course
+3. Attempt exam
+4. Submit answers
+5. View result
+
+---
+
+## Models
+
+- Course
+- Lesson
+- Instructor
+- Learner
+- Question
+- Choice
+- Enrollment
+- Submission
+
+---
+
+## Author
+
+Django Online Course Project
