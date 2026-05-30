@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>{{ course.name }} - Exam</h2>
+    <form method="POST" action="{% url 'onlinecourse:submit' course.id %}">
+        {% csrf_token %}
+        {% for question in questions %}
+            <div class="card mt-2 p-3">
+                <h5>Q{{ forloop.counter }}: {{ question.question_text }}</h5>
+                {% for choice in question.choice_set.all %}
+                    <input type="radio" name="choice{{ question.id }}" value="{{ choice.id }}"> {{ choice.choice_text }}<br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary mt-3">Submit Exam</button>
+    </form>
+</div>
+</body>
+</html>
